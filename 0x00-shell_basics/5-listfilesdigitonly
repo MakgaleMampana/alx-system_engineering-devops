@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a *[0-9]* -l
+ls -a -l
