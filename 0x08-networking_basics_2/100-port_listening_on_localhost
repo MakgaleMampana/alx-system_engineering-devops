@@ -1,27 +1,5 @@
 #!/usr/bin/env bash
+# This script listens on port 98 of localhost and displays received data.
 
-# Start listening on port 98
-nc -l -p 98 &
-
-# Store the process ID of the netcat command
-nc_pid=$!
-
-# Wait for a connection
-echo "Listening on port 98. Connect using telnet."
-
-# Accept connections and display received data
-while true; do
-    # Read incoming data from netcat
-    data=$(nc -l -p 98)
-    echo "Received: $data"
-    
-    # Check for specific text and perform actions
-    if [[ "$data" == "quit" ]]; then
-        echo "Exiting..."
-        break
-    fi
-done
-
-# Kill the netcat process
-kill $nc_pid
+nc -kl 98
 
