@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 # This script listens on port 98 of localhost and displays received data.
 
-nc -kl 98
+while true; do
+  nc -l 98
+done
 
