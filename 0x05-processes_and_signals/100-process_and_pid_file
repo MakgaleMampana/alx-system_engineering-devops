@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# This script does a lot of cool things.
+echo $$ > /var/run/holbertonscript.pid
+
+function term {
+    echo "I hate the kill command"
+    rm /var/run/holbertonscript.pid
+    exit
+}
+function sint {
+    echo "Y U no love me?!"
+}
+function quit {
+    rm /var/run/holbertonscript.pid
+    exit
+}
+
+trap term SIGTERM
+trap sint SIGINT
+trap quit SIGQUIT
+
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
